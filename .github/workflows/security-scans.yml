@@ -21,7 +21,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -e -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=workflow1 -Dsonar.projectKey=workflow1_workflow1
+        run: mvn -X -e -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=workflow1 -Dsonar.projectKey=workflow1_workflow1
 
   snyk-scan:
     name: Snyk Security Scan
